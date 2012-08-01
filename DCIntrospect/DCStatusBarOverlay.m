@@ -43,7 +43,11 @@
 
 		self.leftLabel = [[[UILabel alloc] initWithFrame:CGRectOffset(self.frame, 2.0f, 0.0f)] autorelease];
 		self.leftLabel.backgroundColor = [UIColor clearColor];
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 60000)
 		self.leftLabel.textAlignment = NSTextAlignmentLeft;
+#else
+        self.leftLabel.textAlignment = UITextAlignmentLeft;
+#endif
 		self.leftLabel.font = [UIFont boldSystemFontOfSize:12.0f];
 		self.leftLabel.textColor = [UIColor colorWithWhite:0.97f alpha:1.0f];
 		self.leftLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -52,7 +56,11 @@
 		self.rightLabel = [[[UILabel alloc] initWithFrame:CGRectOffset(self.frame, -2.0f, 0.0f)] autorelease];
 		self.rightLabel.backgroundColor = [UIColor clearColor];
 		self.rightLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-		self.rightLabel.textAlignment = NSTextAlignmentRight;
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 60000)
+        self.rightLabel.textAlignment = NSTextAlignmentRight;
+#else
+        self.rightLabel.textAlignment = UITextAlignmentLeft;
+#endif
 		self.rightLabel.textColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		self.rightLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		[self addSubview:self.rightLabel];
