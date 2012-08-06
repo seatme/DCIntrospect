@@ -59,7 +59,7 @@
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 60000)
         self.rightLabel.textAlignment = NSTextAlignmentRight;
 #else
-        self.rightLabel.textAlignment = UITextAlignmentLeft;
+        self.rightLabel.textAlignment = UITextAlignmentRight;
 #endif
 		self.rightLabel.textColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		self.rightLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
