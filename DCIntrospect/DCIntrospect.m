@@ -1444,7 +1444,9 @@ id UITextInputTraits_valueForKey(id self, SEL _cmd, NSString *key)
 		[outputString appendFormat:@"    autoresizingMask: %@\n", [self describeProperty:@"autoresizingMask" value:[NSNumber numberWithInt:view.autoresizingMask]]];
 		[outputString appendFormat:@"    autoresizesSubviews: %@\n", (view.autoresizesSubviews) ? @"YES" : @"NO"];
 		[outputString appendFormat:@"    contentMode: %@ | ", [self describeProperty:@"contentMode" value:[NSNumber numberWithInt:view.contentMode]]];
-		[outputString appendFormat:@"contentStretch: %@\n", NSStringFromCGRect(view.contentStretch)];
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED < 60000)
+        [outputString appendFormat:@"contentStretch: %@\n", NSStringFromCGRect(view.contentStretch)];
+#endif
 		[outputString appendFormat:@"    backgroundColor: %@\n", [self describeColor:view.backgroundColor]];
 		[outputString appendFormat:@"    alpha: %.2f | ", view.alpha];
 		[outputString appendFormat:@"opaque: %@ | ", (view.opaque) ? @"YES" : @"NO"];
